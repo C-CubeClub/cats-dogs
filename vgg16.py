@@ -209,7 +209,7 @@ class Vgg16():
             Fits the model on data yielded batch-by-batch by a Python generator.
             See Keras documentation: https://keras.io/models/model/
         """
-        self.model.fit_generator(batches, steps_per_epoch=int(np.ceil(batches.nb_sample/batch_size)), nb_epoch=nb_epoch,
+        self.model.fit_generator(batches, steps_per_epoch=int(np.ceil(batches.nb_sample/batch_size)), epochs=nb_epoch,
                 validation_data=val_batches, validation_steps=int(np.ceil(val_batches.nb_sample/batch_size)))
 
 
@@ -227,5 +227,5 @@ class Vgg16():
     
         """
         test_batches = self.get_batches(path, shuffle=False, batch_size=batch_size, class_mode=None)
-        return test_batches, self.model.predict_generator(test_batches, int(np.ceil(test_batches.nb_sample/batch_size)))
+        return test_batches, self.model.predict_generator(test_batches, int(np.ceil(test_batches.samples/batch_size)))
 

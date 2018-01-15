@@ -1,3 +1,4 @@
 .ipynb_checkpoints/
 data/
 lesson1.ipynb
+__pycache__/
