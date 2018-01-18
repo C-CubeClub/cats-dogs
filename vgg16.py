@@ -186,7 +186,7 @@ class Vgg16():
         self.classes = classes
 
 
-    def compile(self, lr=0.001):
+    def compile(self, lr=0.01):
         """
             Configures the model for training.
             See Keras documentation: https://keras.io/models/model/
